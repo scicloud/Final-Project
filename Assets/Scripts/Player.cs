@@ -64,8 +64,18 @@ public class Player : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "Icicle") {
+        if(other.gameObject.tag == "Icicle" && health > 0) {
+            DamagePlayer(1);
             print("You hit an icicle, ouchies!");
+            UIManager.UI.DecrementHealthBar();
+            if(health <= 0) {
+                GameManager.gm.DestroyPlayer(this);
+                UIManager.UI.ResetHealthBar();
+            }
         }
+    }
+
+    private void DamagePlayer(int dmg) {
+        health = health - dmg;
     }
 }

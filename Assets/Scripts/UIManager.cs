@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour {
 
     public static UIManager UI;
 
-    private float healthBarFillAmount = 1;
+    private float healthBarFillAmount = 1f;
 
     private Image healthBar;
 
@@ -22,15 +22,16 @@ public class UIManager : MonoBehaviour {
         healthBar = GetComponentInChildren<Canvas>().transform.GetChild(4).GetChild(0).GetComponent<Image>();
     }
 
-    void Update() {
-        if(Input.GetKeyDown(KeyCode.Q) && this.healthBarFillAmount != 0) {
-            DecrementHealthBar();
+    public void DecrementHealthBar() {
+        if(healthBar.fillAmount != 0) {
+            this.healthBarFillAmount -= 0.1f;
+            healthBar.fillAmount = this.healthBarFillAmount;
         }
     }
 
-    public void DecrementHealthBar() {
-        this.healthBarFillAmount -= 0.1f;
-        healthBar.fillAmount = this.healthBarFillAmount;
+    public void ResetHealthBar() {
+        healthBar.fillAmount = 1f;
+        this.healthBarFillAmount = 1f;
     }
 
     public void DecrementUIAmmunition(int ammoNum) {
