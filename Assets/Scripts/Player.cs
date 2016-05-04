@@ -62,4 +62,10 @@ public class Player : MonoBehaviour {
             enteredShop = false;
         }
     }
+
+    void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "Icicle") {
+            print("You hit an icicle, ouchies!");
+        }
+    }
 }
