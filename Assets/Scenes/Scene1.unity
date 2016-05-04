@@ -900,9 +900,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 407236155}
   - 212: {fileID: 407236154}
+  - 65: {fileID: 407236158}
+  - 65: {fileID: 407236157}
+  - 65: {fileID: 407236156}
   m_Layer: 0
   m_Name: Icicles
-  m_TagString: Untagged
+  m_TagString: Icicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -949,6 +952,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!65 &407236156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 407236153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75236696, y: 0.09972516, z: 0.2}
+  m_Center: {x: 0.0000037262103, y: 0.46013683, z: 0}
+--- !u!65 &407236157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 407236153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09044668, y: 0.5002594, z: 0.2}
+  m_Center: {x: -0.16952698, y: 0.23602808, z: 0}
+--- !u!65 &407236158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 407236153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16660345, y: 0.9961586, z: 0.2}
+  m_Center: {x: 0.13285375, y: -0.011920972, z: 0}
 --- !u!1 &422772315
 GameObject:
   m_ObjectHideFlags: 0
