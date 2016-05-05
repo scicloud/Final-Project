@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTargets:
-  - TargetTransform: {fileID: 622167628}
+  - TargetTransform: {fileID: 803093134}
     TargetInfluenceH: 1
     TargetInfluenceV: 1
     TargetOffset: {x: 0, y: 0}
@@ -1059,48 +1059,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 652216383}
   m_RootOrder: 5
---- !u!1001 &550047442
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -7.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.907
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &566154637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1210,7 @@ GameObject:
   - 222: {fileID: 608706391}
   - 114: {fileID: 608706390}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Coal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score:'
+  m_Text: 'Coal:'
 --- !u!222 &608706391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1385,10 +1343,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!4 &622167628 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
-  m_PrefabInternal: {fileID: 550047442}
 --- !u!1 &633535128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1536,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 652216383}
   m_RootOrder: 15
+--- !u!1001 &706386045
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.413
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.907
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &803093134 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 489342, guid: f84ea9f264679c649ab134076270fa67, type: 2}
+  m_PrefabInternal: {fileID: 706386045}
 --- !u!1 &857067469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,7 +2941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hello there Santa! This tree is your shop, press S to access it and spend
+  m_Text: Hello there Santa! This tree is your shop, press 'S' to access it and spend
     (currency).
 --- !u!222 &1487897476
 CanvasRenderer:
@@ -4175,7 +4175,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092685914}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b41e169e8ee4190429282d06205aaf92, type: 3}
   m_Name: 

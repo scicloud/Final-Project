@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BoyController : MonoBehaviour {
@@ -10,8 +11,14 @@ public class BoyController : MonoBehaviour {
     private bool sawBoyOnce = false;
     private bool reactivateSpeechBubble = false;
 
+    private string textToIterate;
+    private Text textComponent;
+
     void Start() {
         speechBubble = transform.GetChild(0).gameObject;
+        textComponent = speechBubble.GetComponent<Text>();
+        textToIterate = textComponent.text;
+        textComponent.text = "";
         speechBubble.SetActive(false);
     }
 
@@ -24,6 +31,8 @@ public class BoyController : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if(other.tag == "Player" && sawBoyOnce == false) {
             speechBubble.SetActive(true);
+
+            StartCoroutine(TypeText());
             sawBoyOnce = true;
         } else if(other.tag == "Player" && sawBoyOnce == true) {
             reactivateSpeechBubble = true;
@@ -32,6 +41,13 @@ public class BoyController : MonoBehaviour {
 
     void OnTriggerExit(Collider other) {
         speechBubble.SetActive(false);
+    }
+
+    IEnumerator TypeText() {
+        foreach(char letter in textToIterate.ToCharArray()) {
+            textComponent.text += letter;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
 }
