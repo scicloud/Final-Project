@@ -10,4 +10,6 @@ UI: Coins are located in the top right. A glass of milk is your health bar in th
 
 Scenes: StartMenu represents the Main Menu. Scene1 represents the play state of the game.
 
+Bugs: Camera does not snap back to player after death unless user highlights camera in inspector.
+
 (Art/Sprites were done in collaboration between my friend and I. Music/sounds were found online at www.freesound.org)
