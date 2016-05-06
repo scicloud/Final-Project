@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour {
 
     public Transform spawnPoint;
 
+    public Transform coinPrefab;
+
+    public int currentCoins = 0;
+
     void Awake() {
         if(gm == null) {
             gm = this;
@@ -27,11 +31,28 @@ public class GameManager : MonoBehaviour {
     public void DestroyPlayer(Player player) {
         Destroy(player.gameObject);
         RespawnPlayer();
+        ResetThings();
     }
 
     private void RespawnPlayer() {
         tempPlayerPrefab = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation) as Transform;
         ProCamera2D.Instance.AddCameraTarget(tempPlayerPrefab);
+        //ProCamera2D.Instance.Reset();                                                                         //neither of these work :(
+        //ProCamera2D.Instance.MoveCameraInstantlyToPosition(tempPlayerPrefab.transform.position);
+    }
+
+    public void CollectCoin(GameObject coin) {
+        AudioManager.AM.PlayCoinSound();
+        Destroy(coin);
+        currentCoins++;
+        UIManager.UI.UpdateUICoinCount(currentCoins);
+    }
+
+    private void ResetThings() {
+        UIManager.UI.ResetUICoinCount();
+        UIManager.UI.ResetHealthBar();
+        UIManager.UI.ResetUIAmmunition();
+        Instantiate(coinPrefab);
     }
 
 }

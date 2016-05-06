@@ -1,9 +1,10 @@
 fileFormatVersion: 2
 guid: d74b6b5f768cf2644a4211a41d93d181
-timeCreated: 1460404063
+timeCreated: 1462482591
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tile_brick_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -49,7 +50,18 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: tile_brick_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

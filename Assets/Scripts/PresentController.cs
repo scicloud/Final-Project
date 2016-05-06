@@ -31,7 +31,7 @@ public class PresentController : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
-        Destroy(this.gameObject);
+            Destroy(this.gameObject);
     }
 
 

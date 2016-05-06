@@ -10,6 +10,7 @@ public class BoyController : MonoBehaviour {
 
     private bool sawBoyOnce = false;
     private bool reactivateSpeechBubble = false;
+    private bool inBoyRange = false;
 
     private string textToIterate;
     private Text textComponent;
@@ -23,7 +24,7 @@ public class BoyController : MonoBehaviour {
     }
 
     void Update() {
-        if(reactivateSpeechBubble == true && Input.GetKey(KeyCode.LeftControl)) {
+        if(inBoyRange && reactivateSpeechBubble == true && Input.GetKey(KeyCode.LeftControl)) {
             speechBubble.SetActive(true);
         }
     }
@@ -34,13 +35,16 @@ public class BoyController : MonoBehaviour {
 
             StartCoroutine(TypeText());
             sawBoyOnce = true;
+            inBoyRange = true;
         } else if(other.tag == "Player" && sawBoyOnce == true) {
             reactivateSpeechBubble = true;
+            inBoyRange = true;
         }
     }
 
     void OnTriggerExit(Collider other) {
         speechBubble.SetActive(false);
+        inBoyRange = false;
     }
 
     IEnumerator TypeText() {

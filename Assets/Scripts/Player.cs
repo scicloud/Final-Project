@@ -3,34 +3,36 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    private int health = 10;
+    private int health = 10;                                                        //health of player
 
-    public Transform present;
-    public Transform presentPos;
+    public Transform present;                                                       //gameobject of present prefab
+    public Transform presentPos;                                                    //position where present should be instantiated
 
-    private bool enteredShop = false;
+    public bool inShopRange = false;                                                //if player is in the shop range or not
+    public bool inShop = false;                                                     //if player is in the shop or not
 
-    private int ammoCapacity = 3;
-    private int currentAmmo = 0;
+    private int ammoCapacity = 3;                                                   //max presents player can have
+    private int currentAmmo = 0;                                                    //current amount of presents player has
+    private int indexToDisable = 0;                                                 //index of ammunitionImages list for UI (3 presents in UI)
 
 
     void Start() {
-        currentAmmo = ammoCapacity;
+        currentAmmo = ammoCapacity;                                                 //set current ammo to max ammo at the start of the player instantiation
     }
 	
-	// Update is called once per frame
 	void Update () {
 
         FallToDeath();
 
         if(Input.GetKeyDown(KeyCode.Z) && currentAmmo > 0) {
             ThrowPresent();
-            UIManager.UI.DecrementUIAmmunition(0);
+            UIManager.UI.DecrementUIAmmunition(indexToDisable);
             currentAmmo--;
+            indexToDisable++;
         }
 
-        if(enteredShop == true && Input.GetKeyDown(KeyCode.S)) {
-            Debug.Log("You entered the shop!");
+        if(inShopRange == true && Input.GetKeyDown(KeyCode.S)) {
+            inShop = true;
             ShopManager.SM.EnterShop();
         }
 
@@ -43,30 +45,29 @@ public class Player : MonoBehaviour {
     }
 
     private void ThrowPresent() {
-        Debug.Log("Threw present");
 
         GameObject temp = (Instantiate(present, presentPos.position, Quaternion.identity) as Transform).gameObject;
-        //temp.transform.parent = this.transform;
 
         //Throw present straight using raycast?
     }
 
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Shop") {
-            enteredShop = true;
+            inShopRange = true;
+        } else if(other.gameObject.tag == "Coin") {
+            GameManager.gm.CollectCoin(other.gameObject);
         }
     }
 
     void OnTriggerExit(Collider other) {
         if(other.gameObject.tag == "Shop") {
-            enteredShop = false;
+            inShopRange = false;
         }
     }
 
     void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Icicle" && health > 0) {
             DamagePlayer(1);
-            print("You hit an icicle, ouchies!");
             UIManager.UI.DecrementHealthBar();
             if(health <= 0) {
                 GameManager.gm.DestroyPlayer(this);

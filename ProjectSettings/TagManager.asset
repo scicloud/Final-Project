@@ -9,6 +9,10 @@ TagManager:
   - Shop
   - Pause Menu
   - Icicle
+  - Coin
+  - Ammunition
+  - Enemy
+  - Present
   layers:
   - Default
   - TransparentFX
@@ -19,11 +23,11 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Present
+  - Player
+  - Collectables
+  - Background Characters
+  - Obstacles
   - 
   - 
   - 

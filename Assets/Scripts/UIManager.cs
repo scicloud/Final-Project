@@ -6,9 +6,10 @@ public class UIManager : MonoBehaviour {
 
     public static UIManager UI;
 
+    private Image healthBar;
     private float healthBarFillAmount = 1f;
 
-    private Image healthBar;
+    private Text coinsText;
 
     public List<Image> ammunitionImages;
 
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour {
 
     void Start() {
         healthBar = GetComponentInChildren<Canvas>().transform.GetChild(4).GetChild(0).GetComponent<Image>();
+        coinsText = transform.GetChild(0).GetChild(0).GetComponent<Text>();
     }
 
     public void DecrementHealthBar() {
@@ -36,11 +38,36 @@ public class UIManager : MonoBehaviour {
 
     public void DecrementUIAmmunition(int ammoNum) {
         if(ammunitionImages.Count > 0) {
-            Destroy(ammunitionImages[ammoNum].gameObject);
-            ammunitionImages.RemoveAt(ammoNum);
+            //Destroy(ammunitionImages[ammoNum].gameObject);
+            //ammunitionImages.RemoveAt(ammoNum);
+            ammunitionImages[ammoNum].gameObject.SetActive(false);
         } else {
             print("You're out of ammo!");
         }
+    }
+
+    public void UpdateUICoinCount(int coins) {
+        coinsText.text = "Coins: " + coins;
+    }
+
+    public void ResetUICoinCount() {
+        coinsText.text = "Coins: 0";
+    }
+
+    public void ResetUIAmmunition() {
+
+        foreach(Image img in ammunitionImages) {
+            img.gameObject.SetActive(true);
+        }
+
+        //ammunitionImages = new List<Image>();
+        //print("hello world");
+        //foreach(Transform child in transform.GetChild(0)) {
+        //    if(child.gameObject.tag == "Ammunition") {
+        //        ammunitionImages.Add(child.GetComponent<Image>());
+        //        print("Added: " + child.GetComponent<Image>().name);
+        //    }
+        //}
     }
 
 }

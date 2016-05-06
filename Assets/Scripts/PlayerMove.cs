@@ -14,13 +14,16 @@ public class PlayerMove : MonoBehaviour {
 
     private bool isGrounded = false;                                                    //To prevent jumping infinitely many times
 
-    public bool facingRight = true;                                                    //Which way the character is facing, used for Flip method
+    public bool facingRight = true;                                                     //Which way the character is facing, used for Flip method
+
+    private Player player;                                                              //Reference to player script, needed for shop implementation to freeze player when in shop
 
 	// Use this for initialization
 	void Start () {
 
-        gravity = -(2 * jumpHeight) / Mathf.Pow(timeToReachHighestPoint, 2);            //Calculate gravity with equation
+        gravity = -(2 * jumpHeight) / Mathf.Pow(timeToReachHighestPoint, 2);            //Calculate gravity with physics equation
         rbody = GetComponent<Rigidbody>();                                              //Get the rigidbody
+        player = GetComponent<Player>();                                                //Get the player
 
     }
 	
@@ -38,7 +41,7 @@ public class PlayerMove : MonoBehaviour {
         float xMov = Input.GetAxisRaw("Horizontal");                                    //Get (1, 0, 0) or (-1, 0, 0)
 
         velocity = transform.position;                                                  //Temp to change pos
-        velocity.x = velocity.x + (xMov * speed * Time.deltaTime);                      //(1, 0, 0) * (4, 0, 0) = 4, 0, 0
+        velocity.x = velocity.x + (xMov * speed * Time.deltaTime);                      //(1, 0, 0) * (3.5, 0, 0) = 3.5, 0, 0
         transform.position = velocity;                                                  //Set transform position to changed temp vel
 
         if(xMov < 0f && facingRight) {
@@ -46,7 +49,6 @@ public class PlayerMove : MonoBehaviour {
         } else if(xMov > 0f && !facingRight) {
             Flip();
         }
-
     }
 
     private void PerformJump() {
@@ -58,6 +60,7 @@ public class PlayerMove : MonoBehaviour {
 
     }
 
+    //Pulled from Unity tutorials, flips the player
     private void Flip() {
 
         facingRight = !facingRight;
