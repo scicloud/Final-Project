@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
+using UnityEngine.SceneManagement;
 using Com.LuisPedroFonseca.ProCamera2D;
 
 public enum GameState {
@@ -53,6 +52,10 @@ public class GameManager : MonoBehaviour {
         UIManager.UI.ResetHealthBar();
         UIManager.UI.ResetUIAmmunition();
         Instantiate(coinPrefab);
+    }
+
+    public void RestartGameToMainMenu() {
+        SceneManager.LoadScene(0);
     }
 
 }

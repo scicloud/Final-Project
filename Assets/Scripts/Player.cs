@@ -56,6 +56,8 @@ public class Player : MonoBehaviour {
             inShopRange = true;
         } else if(other.gameObject.tag == "Coin") {
             GameManager.gm.CollectCoin(other.gameObject);
+        } else if(other.gameObject.tag == "Endgame") {
+            GameManager.gm.RestartGameToMainMenu();
         }
     }
 

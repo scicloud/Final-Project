@@ -13,6 +13,8 @@ TagManager:
   - Ammunition
   - Enemy
   - Present
+  - Endgame
+  - Snowman
   layers:
   - Default
   - TransparentFX

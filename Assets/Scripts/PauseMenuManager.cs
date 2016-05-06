@@ -30,14 +30,12 @@ public class PauseMenuManager : MonoBehaviour {
 
     public void PauseGame() {
         Time.timeScale = 0f;
-        print("GAME PAUSED");
         gamePaused = true;
         canvas.gameObject.SetActive(true);
     }
 
     public void ResumeGame() {
         Time.timeScale = 1f;
-        print("GAME RESUMED");
         gamePaused = false;
         canvas.gameObject.SetActive(false);
     }
