@@ -7,3 +7,5 @@ of the game but was not implemented because I was super distracted by implementi
 Buttons: Z shoots presents, ESC opens pause menu, Left CTRL will open the Elf's message once it closes.
 
 UI: Coins are located in the top right. A glass of milk is your health bar in the bottom left. Present ammunition is located in the bottom right.
+
+(Art/Sprites were done in collaboration between my friend and I. Music/sounds were found online at www.freesound.org)
